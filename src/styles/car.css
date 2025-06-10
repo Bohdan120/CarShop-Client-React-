@@ -1,0 +1,62 @@
+.create-car-space {
+    margin-bottom: 16px;
+}
+
+.car-grid {
+    margin-top: 16px;
+}
+
+.car-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;    
+    border-radius: 20px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;  
+    border: 2px solid orange;
+    background-color: beige;
+
+}
+
+.car-card:hover {   
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+
+}
+
+
+.car-card .ant-card-cover img {
+    height: 200px;
+    object-fit: cover;    
+}
+
+.car-card .ant-card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;      
+    
+}
+
+.car-card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.car-image {
+    max-width: 100%;     
+    margin-bottom: 16px;
+}
+
+.car-image:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}    
+
+.ant-card .ant-card-actions {
+    background-color: beige;
+}

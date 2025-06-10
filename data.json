@@ -1,0 +1,517 @@
+{
+  "cars": [
+    {
+      "id": "1",
+      "make": "Toyota",
+      "model": "Corolla",
+      "year": 2022,
+      "color": "Silver",
+      "mileage": 20000,
+      "price": 25000,
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "engine": "2.0L 4-cylinder",
+      "horsepower": 169,
+      "features": [
+        "Bluetooth",
+        "Backup Camera",
+        "Keyless Entry"
+      ],
+      "owners": 1,
+      "image": "https://today.ua/wp-content/uploads/2021/12/Toyota-Corolla-1.jpg"
+    },
+    {
+      "id": "3",
+      "make": "Ford",
+      "model": "Mustang",
+      "year": 2020,
+      "color": "Red",
+      "mileage": 15000,
+      "price": 35000,
+      "fuelType": "Gasoline",
+      "transmission": "Manual",
+      "engine": "5.0L V8",
+      "horsepower": 450,
+      "features": [
+        "Leather Seats",
+        "Navigation System",
+        "Heated Seats"
+      ],
+      "owners": 1,
+      "image": "https://img.automoto.ua/overview/ford-mustang-2020-3fd-huge-1564.jpg"
+    },
+    {
+      "id": "6",
+      "make": "BMW",
+      "model": "3 Series",
+      "year": 2021,
+      "color": "White",
+      "mileage": 12000,
+      "price": 40000,
+      "fuelType": "Diesel",
+      "transmission": "Automatic",
+      "engine": "2.0L 4-cylinder",
+      "horsepower": 255,
+      "features": [
+        "Sunroof",
+        "Adaptive Cruise Control",
+        "Parking Assistance"
+      ],
+      "owners": 1,
+      "image": "https://hips.hearstapps.com/hmg-prod/images/2021-bmw-3-series-mmp-1-1593549868.jpg"
+    },
+    {
+      "id": "7",
+      "make": "Tesla",
+      "model": "Model 3",
+      "year": 2022,
+      "color": "Red",
+      "mileage": 8000,
+      "price": 45000,
+      "fuelType": "Electric",
+      "transmission": "Automatic",
+      "engine": "Electric Motor",
+      "horsepower": 322,
+      "features": [
+        "Autopilot",
+        "Full Self-Driving Capability",
+        "Premium Audio System"
+      ],
+      "owners": 1,
+      "image": "https://cdn0.riastatic.com/photosnew/auto/photo/tesla_model-3__518635415f.jpg"
+    },
+    {
+      "id": "8",
+      "make": "Audi",
+      "model": "Q5",
+      "year": 2021,
+      "color": "Gray",
+      "mileage": 15000,
+      "price": 38000,
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "engine": "2.0L 4-cylinder",
+      "horsepower": 248,
+      "features": [
+        "Virtual Cockpit",
+        "Panoramic Sunroof",
+        "Apple CarPlay"
+      ],
+      "owners": 1,
+      "image": "https://i.infocar.ua/i/12/6234/1400x936.jpg"
+    },
+    {
+      "id": "9",
+      "make": "Mercedes-Benz",
+      "model": "E-Class",
+      "year": 2020,
+      "color": "Silver",
+      "mileage": 18000,
+      "price": 42000,
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "engine": "2.0L 4-cylinder",
+      "horsepower": 255,
+      "features": [
+        "MBUX Infotainment",
+        "Heated Steering Wheel",
+        "Air Suspension"
+      ],
+      "owners": 2,
+      "image": "https://i.infocar.ua/i/2/6241/118625/1024x.jpg"
+    },
+    {
+      "id": "10",
+      "make": "Chevrolet",
+      "model": "Tahoe",
+      "year": 2020,
+      "color": "Black",
+      "mileage": 25000,
+      "price": 55000,
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "engine": "5.3L V8",
+      "horsepower": 355,
+      "features": [
+        "Leather Seats",
+        "Captain's Chairs",
+        "Wireless Charging"
+      ],
+      "owners": 1,
+      "image": "https://i.infocar.ua/i/12/6229/1200x630.jpg"
+    },
+    {
+      "id": "12",
+      "make": "Lexus",
+      "model": "RX 350",
+      "year": 2020,
+      "color": "Silver",
+      "mileage": 20000,
+      "price": 42000,
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "engine": "3.5L V6",
+      "horsepower": 295,
+      "features": [
+        "Leather Seats",
+        "Panoramic Roof",
+        "Power Liftgate"
+      ],
+      "owners": 2,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ37JJrfO9luseU6bzVX5qjWfk5hvyF1QaaKROr4zfrBA&s"
+    },
+    {
+      "id": "13",
+      "make": "Ford",
+      "model": "F-150",
+      "year": 2021,
+      "color": "Blue",
+      "mileage": 15000,
+      "price": 45000,
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "engine": "3.5L V6",
+      "horsepower": 375,
+      "features": [
+        "Towing Package",
+        "Tailgate Step",
+        "Pro Trailer Backup Assist"
+      ],
+      "owners": 1,
+      "image": "https://i.infocar.ua/i/2/6467/122061/1920x.jpg"
+    },
+    {
+      "id": "14",
+      "make": "BMW",
+      "model": "X5",
+      "year": 2021,
+      "color": "Black",
+      "mileage": 10000,
+      "price": 60000,
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "engine": "3.0L 6-cylinder",
+      "horsepower": 335,
+      "features": [
+        "Heads-Up Display",
+        "Gesture Control",
+        "Wireless Charging"
+      ],
+      "owners": 1,
+      "image": "https://img.automoto.ua/overview/bmw-x5-2021-e98-huge-1897.jpg"
+    },
+    {
+      "id": "16",
+      "make": "Toyota",
+      "model": "RAV4",
+      "year": 2020,
+      "color": "Blue",
+      "mileage": 18000,
+      "price": 32000,
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "engine": "2.5L 4-cylinder",
+      "horsepower": 203,
+      "features": [
+        "Toyota Safety Sense",
+        "Apple CarPlay",
+        "Android Auto"
+      ],
+      "owners": 1,
+      "image": "https://hips.hearstapps.com/hmg-prod/images/2020-toyota-rav4-mmp-1-1570472132.jpg"
+    },
+    {
+      "id": "17",
+      "make": "Tesla",
+      "model": "Model Y",
+      "year": 2022,
+      "color": "White",
+      "mileage": 6000,
+      "price": 55000,
+      "fuelType": "Electric",
+      "transmission": "Automatic",
+      "engine": "Electric Motor",
+      "horsepower": 384,
+      "features": [
+        "Autopilot",
+        "Full Self-Driving Capability",
+        "Panoramic Glass Roof"
+      ],
+      "owners": 1,
+      "image": "https://wah.ua/static/content/thumbs/744*496/4/20/dsxi56-8cff2f0dc3ae189e43186c5bcca08204.jpeg"
+    },
+    {
+      "id": "18",
+      "make": "Chevrolet",
+      "model": "Silverado",
+      "year": 2020,
+      "color": "Red",
+      "mileage": 25000,
+      "price": 38000,
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "engine": "5.3L V8",
+      "horsepower": 355,
+      "features": [
+        "Trailer Sway Control",
+        "Apple CarPlay",
+        "Android Auto"
+      ],
+      "owners": 1,
+      "image": "https://cdn.motor1.com/images/mgl/EBx7o/s1/2019-chevrolet-silverado-trail-boss.jpg"
+    },
+    {
+      "id": "19",
+      "make": "Ford",
+      "model": "Escape",
+      "year": 2021,
+      "color": "Gray",
+      "mileage": 12000,
+      "price": 30000,
+      "fuelType": "Hybrid",
+      "transmission": "CVT",
+      "engine": "2.5L 4-cylinder Hybrid",
+      "horsepower": 200,
+      "features": [
+        "Ford Co-Pilot360",
+        "Wireless Charging Pad",
+        "Hands-Free Liftgate"
+      ],
+      "owners": 1,
+      "image": "https://hips.hearstapps.com/hmg-prod/images/2021-ford-escape-phev-108-1651779562.jpg?crop=0.843xw:0.631xh;0.0753xw,0.336xh&resize=1200:*"
+    },
+    {
+      "id": "20",
+      "make": "Mercedes-Benz",
+      "model": "GLC",
+      "year": 2021,
+      "color": "Black",
+      "mileage": 10000,
+      "price": 48000,
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "engine": "2.0L 4-cylinder",
+      "horsepower": 255,
+      "features": [
+        "MBUX Infotainment",
+        "Panoramic Sunroof",
+        "Heated Seats"
+      ],
+      "owners": 1,
+      "image": "https://lh6.googleusercontent.com/proxy/IqRMJz8oK5fas4AlZXL8mGS_JsFgrKlHHASXVHuwjhEzpYDjkZOjiBP9OEeMoXAEm8VhkWBgcLWfrc27H6ma08Q8UfYD-QQyR9WGiocdTlJ4rD629pY3-rQW3v2404pCY2YM6vLP42cH9I7-xw"
+    },
+    {
+      "id": "21",
+      "make": "BMW",
+      "model": "4 Series",
+      "year": 2021,
+      "color": "Blue",
+      "mileage": 15000,
+      "price": 50000,
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "engine": "2.0L 4-cylinder",
+      "horsepower": 255,
+      "features": [
+        "Apple CarPlay",
+        "Android Auto",
+        "Wireless Charging"
+      ],
+      "owners": 1,
+      "image": "https://www.cnet.com/a/img/resize/9250bb4d5b5023aaa610d205b47680689cb3835a/hub/2020/06/01/91c0b3b4-0010-4b21-bc33-0b1e2d1edf86/2021-bmw-4-series-038.jpg?auto=webp&width=1920"
+    },
+    {
+      "id": "22",
+      "make": "Honda",
+      "model": "Accord",
+      "year": 2022,
+      "color": "Silver",
+      "mileage": 8000,
+      "price": 32000,
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "engine": "1.5L 4-cylinder",
+      "horsepower": 192,
+      "features": [
+        "Honda Sensing Suite",
+        "Apple CarPlay",
+        "Android Auto"
+      ],
+      "owners": 1,
+      "image": "https://www.ixbt.com/img/n1/news/2023/1/2/2022-honda-accord-sport-2-0t-15_large.png"
+    },
+    {
+      "id": "23",
+      "make": "Jeep",
+      "model": "Grand Cherokee",
+      "year": 2021,
+      "color": "White",
+      "mileage": 12000,
+      "price": 45000,
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "engine": "3.6L V6",
+      "horsepower": 295,
+      "features": [
+        "Uconnect Infotainment",
+        "Apple CarPlay",
+        "Android Auto"
+      ],
+      "owners": 1,
+      "image": "https://media.ed.edmunds-media.com/jeep/grand-cherokee/2021/oem/2021_jeep_grand-cherokee_4dr-suv_80th_fq_oem_1_1600.jpg"
+    },
+    {
+      "id": "24",
+      "make": "Lexus",
+      "model": "NX",
+      "year": 2020,
+      "color": "Black",
+      "mileage": 15000,
+      "price": 38000,
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "engine": "2.0L 4-cylinder",
+      "horsepower": 235,
+      "features": [
+        "Lexus Enform",
+        "Power Liftgate",
+        "Heated Front Seats"
+      ],
+      "owners": 1,
+      "image": "https://i.infocar.ua/i/12/6078/1400x936.jpg"
+    },
+    {
+      "id": "25",
+      "make": "Ford",
+      "model": "Explorer",
+      "year": 2022,
+      "color": "Red",
+      "mileage": 10000,
+      "price": 45000,
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "engine": "2.3L 4-cylinder",
+      "horsepower": 300,
+      "features": [
+        "Ford Co-Pilot360",
+        "Sync 4 Infotainment",
+        "Tri-Zone Climate Control"
+      ],
+      "owners": 1,
+      "image": "https://fordmaster.com/upload/iblock/1e8/1e8262201ccfa5f479bef3a7b4020218.jpg"
+    },
+    {
+      "id": "26",
+      "make": "Chevrolet",
+      "model": "Camaro",
+      "year": 2021,
+      "color": "Yellow",
+      "mileage": 8000,
+      "price": 45000,
+      "fuelType": "Gasoline",
+      "transmission": "Manual",
+      "engine": "6.2L V8",
+      "horsepower": 455,
+      "features": [
+        "Performance Exhaust",
+        "Magnetic Ride Control",
+        "Launch Control"
+      ],
+      "owners": 1,
+      "image": "https://hips.hearstapps.com/hmg-prod/images/2021-chevrolet-camaro-mmp-1-1585333717.jpg?crop=0.466xw:0.451xh;0.186xw,0.272xh&resize=1200:*"
+    },
+    {
+      "id": "27",
+      "make": "Audi",
+      "model": "A6",
+      "year": 2022,
+      "color": "Gray",
+      "mileage": 12000,
+      "price": 55000,
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "engine": "3.0L V6",
+      "horsepower": 335,
+      "features": [
+        "Virtual Cockpit",
+        "Bang & Olufsen Sound System",
+        "Heated Front Seats"
+      ],
+      "owners": 1,
+      "image": "https://audi.autoua.net/media/catalog/9/3/p1763493-1582023386.jpg"
+    },
+    {
+      "id": "28",
+      "make": "Subaru",
+      "model": "Forester",
+      "year": 2022,
+      "color": "Green",
+      "mileage": 10000,
+      "price": 35000,
+      "fuelType": "Gasoline",
+      "transmission": "CVT",
+      "engine": "2.5L 4-cylinder",
+      "horsepower": 182,
+      "features": [
+        "EyeSight Driver Assist",
+        "Symmetrical All-Wheel Drive",
+        "X-Mode for Off-Road"
+      ],
+      "owners": 1,
+      "image": "https://www.autocentre.ua/wp-content/uploads/2021/06/2022-subaru-forester-jdm-2.jpg"
+    },
+    {
+      "id": "29",
+      "make": "Hyundai",
+      "model": "Santa Fe",
+      "year": 2021,
+      "color": "White",
+      "mileage": 8000,
+      "price": 32000,
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "engine": "2.5L 4-cylinder",
+      "horsepower": 191,
+      "features": [
+        "Blind-Spot Collision-Avoidance Assist",
+        "Rear Occupant Alert",
+        "Android Auto"
+      ],
+      "owners": 1,
+      "image": "https://i.infocar.ua/img/news-/148028/foto_003.jpg"
+    },
+    {
+      "id": "30",
+      "make": "Kia",
+      "model": "Telluride",
+      "year": 2020,
+      "color": "Black",
+      "mileage": 10000,
+      "price": 42000,
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "engine": "3.8L V6",
+      "horsepower": 291,
+      "features": [
+        "Blind Spot View Monitor",
+        "Apple CarPlay",
+        "Android Auto"
+      ],
+      "owners": 1,
+      "image": "https://media.ed.edmunds-media.com/kia/telluride/2020/oem/2020_kia_telluride_4dr-suv_sx_fq_oem_1_1600.jpg"
+    },
+    {
+      "id": "31",
+      "make": "sdfg",
+      "model": "sdg",
+      "year": "454",
+      "price": "456456",
+      "mileage": "456456",
+      "fuelType": "456456",
+      "transmission": "456456",
+      "engine": "fgsd",
+      "horsepower": "6456",
+      "image": "assets/images/car.jpg"
+    }    
+  ]
+}
