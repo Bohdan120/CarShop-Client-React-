@@ -40,22 +40,22 @@ export default function Header() {
         const items = [
             {
                 key: "/",
-                label: <Link to="/">Home</Link>,
+                label: <Link to="/">Головна</Link>,
                 icon: <HomeOutlined />,
             },
             {
                 key: "/cars",
-                label: <Link to="/cars">Cars</Link>,
+                label: <Link to="/cars">Автомобілі</Link>,
                 icon: <CarOutlined />,
             },
             {
                 key: "/reviews",
-                label: <Link to="/reviews">Reviews</Link>,
-                icon: <CommentOutlined  />,
+                label: <Link to="/reviews">Відгуки</Link>,
+                icon: <CommentOutlined />,
             },
             {
                 key: "/cart",
-                label: <Link to="/cart">Cart</Link>,
+                label: <Link to="/cart">Кошик</Link>,
                 icon: <ShoppingCartOutlined />,
             },
         ];
@@ -63,7 +63,7 @@ export default function Header() {
         if (role === "admin") {
             items.push({
                 key: "/admin/cars",
-                label: <Link to="/admin/cars">Admin panel</Link>,
+                label: <Link to="/admin/cars">Адмін-панель</Link>,
                 icon: <ToolOutlined />,
             });
         }
@@ -71,13 +71,13 @@ export default function Header() {
         if (role) {
             items.push({
                 key: "logout",
-                label: <span onClick={handleLogout}>Logout</span>,
+                label: <span onClick={handleLogout}>Вийти</span>,
                 icon: <LogoutOutlined />,
             });
         } else {
             items.push({
                 key: "/login",
-                label: <Link to="/login">Login</Link>,
+                label: <Link to="/login">Увійти</Link>,
                 icon: <LoginOutlined />,
             });
         }

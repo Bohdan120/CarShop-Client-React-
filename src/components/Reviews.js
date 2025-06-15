@@ -21,7 +21,7 @@ export default function Reviews() {
 
     return (
         <div style={{ padding: 24 }}>
-            <h1>Customer Reviews</h1>
+            <h1>Відгуки клієнтів</h1>
             {loading ? (
                 <Spin />
             ) : (
@@ -33,7 +33,7 @@ export default function Reviews() {
                             <Card title={`${item.car.make} ${item.car.model}`}>
                                 <Rate disabled value={item.rating} />
                                 <p style={{ marginTop: 8 }}>{item.comment}</p>
-                                <small>{new Date(item.reviewDate).toLocaleDateString()}</small>
+                                <small>{new Date(item.reviewDate).toLocaleDateString("uk-UA")}</small>
                             </Card>
                         </List.Item>
                     )}

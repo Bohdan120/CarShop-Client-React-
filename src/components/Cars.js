@@ -21,7 +21,6 @@ const Cars = () => {
     const { addToCart, isInCart } = useContext(CartContext);
     const [cartStatus, setCartStatus] = useState({});
 
-    // Окремо отримуємо makes та categories при монтуванні
     const fetchMakesAndCategories = async () => {
         try {
             const [makesRes, categoriesRes] = await Promise.all([
@@ -29,10 +28,10 @@ const Cars = () => {
                 carsService.getCategories()
             ]);
             setMakes(makesRes.data);
-            setCategories(categoriesRes.data.map(cat => cat.name || cat)); // залежить від формату
+            setCategories(categoriesRes.data.map(cat => cat.name || cat)); 
         } catch (error) {
-            console.error("Error fetching makes or categories:", error);
-            message.error("Failed to load makes or categories");
+            console.error("Помилка при завантаженні марок або категорій:", error);
+            message.error("Не вдалося завантажити марки або категорії");
         }
     };
 
@@ -49,7 +48,6 @@ const Cars = () => {
             const items = response.data.items;
             const total = response.data.totalCount;
 
-            // Оновлення посилань на зображення
             items.forEach(car => {
                 if (car.imageUrl && !car.imageUrl.includes('://')) {
                     car.imageUrl = process.env.REACT_APP_API_HOST + car.imageUrl;
@@ -59,15 +57,14 @@ const Cars = () => {
             setCars(items);
             setTotalCars(total);
 
-            // Оновлення статусу в корзині
             const status = {};
             for (const car of items) {
                 status[car.id] = await isInCart(car.id);
             }
             setCartStatus(status);
         } catch (error) {
-            console.error("Error fetching cars:", error);
-            message.error("Failed to load cars");
+            console.error("Помилка при завантаженні авто:", error);
+            message.error("Не вдалося завантажити авто");
         }
     };
 
@@ -106,11 +103,11 @@ const Cars = () => {
     const handleBuy = async (car) => {
         try {
             await addToCart(car.id);
-            message.success(`${car.make} ${car.model} added to cart!`);
+            message.success(`${car.make} ${car.model} додано до кошика!`);
             setCartStatus(prev => ({ ...prev, [car.id]: true }));
         } catch (error) {
-            console.error("Failed to add to cart:", error);
-            message.error("Failed to add car to cart.");
+            console.error("Не вдалося додати в кошик:", error);
+            message.error("Не вдалося додати авто до кошика.");
         }
     };
 
@@ -118,10 +115,10 @@ const Cars = () => {
         <>
             <Space wrap style={{ marginBottom: 16 }}>
                 <Button onClick={handleDirectionChange}>
-                    {sortDirection === 'asc' ? 'Ascending' : 'Descending'} Price
+                    {sortDirection === 'asc' ? 'Ціна за зростанням' : 'Ціна за спаданням'}
                 </Button>
                 <Select
-                    placeholder="Search by category"
+                    placeholder="Фільтр за категорією"
                     onChange={handleCategoryChange}
                     style={{ width: 200 }}
                     allowClear
@@ -132,7 +129,7 @@ const Cars = () => {
                     ))}
                 </Select>
                 <Select
-                    placeholder="Search by make"
+                    placeholder="Фільтр за маркою"
                     onChange={handleMakeChange}
                     style={{ width: 200 }}
                     allowClear
@@ -156,7 +153,7 @@ const Cars = () => {
                                     onClick={() => handleBuy(car)}
                                     disabled={cartStatus[car.id]}
                                 >
-                                    {cartStatus[car.id] ? 'In Cart' : 'Buy'}
+                                    {cartStatus[car.id] ? 'У кошику' : 'Купити'}
                                 </Button>,
                             ]}
                         >
@@ -164,14 +161,14 @@ const Cars = () => {
                                 title={`${car.make} ${car.model}`}
                                 description={
                                     <>
-                                        <p><strong>Year:</strong> {car.year}</p>
-                                        <p><strong>Price:</strong> ${car.price}</p>
-                                        <p><strong>Mileage:</strong> {car.mileage}</p>
-                                        <p><strong>Engine:</strong> {car.engine}</p>
-                                        <p><strong>Horsepower:</strong> {car.horsepower}</p>
-                                        <p><strong>Category:</strong> {car.categoryName}</p>
-                                        <p><strong>Description:</strong> {car.description}</p>
-                                        <p><strong>In Stock:</strong> {car.inStock ? 'Yes' : 'No'}</p>
+                                        <p><strong>Рік:</strong> {car.year}</p>
+                                        <p><strong>Ціна:</strong> ${car.price}</p>
+                                        <p><strong>Пробіг:</strong> {car.mileage}</p>
+                                        <p><strong>Двигун:</strong> {car.engine}</p>
+                                        <p><strong>Потужність:</strong> {car.horsepower}</p>
+                                        <p><strong>Категорія:</strong> {car.categoryName}</p>
+                                        <p><strong>Опис:</strong> {car.description}</p>
+                                        <p><strong>В наявності:</strong> {car.inStock ? 'Так' : 'Ні'}</p>
                                     </>
                                 }
                             />
@@ -185,7 +182,7 @@ const Cars = () => {
                     onClick={goToPrevPage}
                     disabled={currentPage === 1}
                 />
-                <span>Page {currentPage} of {Math.ceil(totalCars / pageSize)}</span>
+                <span>Сторінка {currentPage} з {Math.ceil(totalCars / pageSize)}</span>
                 <Button
                     icon={<RightOutlined />}
                     onClick={goToNextPage}

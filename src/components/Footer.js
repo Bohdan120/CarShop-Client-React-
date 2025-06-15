@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Layout as AntdLayout } from 'antd';
 
 const { Footer: AntdFooter } = AntdLayout;
@@ -12,7 +12,7 @@ export default function Footer() {
                 color: 'white'
             }}
         >
-            Car Shop ©{new Date().getFullYear()} Created by Bohdan
+            Автосалон ©{new Date().getFullYear()} Розроблено Богданом
         </AntdFooter>
-    )
+    );
 }

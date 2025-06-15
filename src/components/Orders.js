@@ -11,7 +11,7 @@ const Orders = () => {
                 const res = await ordersService.getAllByUser();
                 setOrders(res.data);
             } catch (err) {
-                message.error("Failed to fetch orders.");
+                message.error("Не вдалося отримати замовлення.");
                 console.error(err);
             }
         };
@@ -31,15 +31,15 @@ const Orders = () => {
     };
 
     const columns = [
-        { title: 'Order ID', dataIndex: 'id', key: 'id' },
+        { title: 'ID замовлення', dataIndex: 'id', key: 'id' },
         {
-            title: 'Date',
+            title: 'Дата',
             dataIndex: 'date',
             key: 'date',
             render: formatDate,
         },
         {
-            title: 'Total Price',
+            title: 'Загальна сума',
             dataIndex: 'totalPrice',
             key: 'totalPrice',
             render: (price) => `$${price.toFixed(2)}`,
@@ -58,19 +58,20 @@ const Orders = () => {
 
     return (
         <div className="p-4 max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold mb-4">Your Orders</h2>
+            <h2 className="text-2xl font-bold mb-4">Ваші замовлення</h2>
             <Table
                 dataSource={orders.map(o => ({ ...o, key: o.id }))}
                 columns={columns}
                 expandable={{
                     expandedRowRender: (record) => (
                         <>
-                            <h4 className="font-semibold mb-2">Cars:</h4>
+                            <h4 className="font-semibold mb-2">Автомобілі:</h4>
                             {renderProducts(record.products)}
                         </>
                     ),
                 }}
                 pagination={{ pageSize: 5 }}
+                locale={{ emptyText: "Немає замовлень" }}
             />
         </div>
     );

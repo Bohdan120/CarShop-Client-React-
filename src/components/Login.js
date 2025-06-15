@@ -22,19 +22,19 @@ export default function Login() {
             const res = await accountsService.login(values);
 
             if (!res || res.status !== 200 || !res.data?.accessToken) {
-                throw new Error("Invalid login response");
+                throw new Error("Неправильна відповідь при вході");
             }
 
             tokensService.save(res.data);
 
             const tokenData = parseJwt(res.data.accessToken);
             if (!tokenData) {
-                throw new Error("Failed to parse access token");
+                throw new Error("Не вдалося розібрати access token");
             }
 
             const role = tokenData?.["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
             if (!role) {
-                throw new Error("User role not found in token");
+                throw new Error("Роль користувача не знайдена в токені");
             }
 
             localStorage.setItem("userRole", role);
@@ -44,31 +44,29 @@ export default function Login() {
                 roles: role
             });
 
-            message.success("You're logged in successfully!");
+            message.success("Ви успішно увійшли!");
             navigate(-1);
         } catch (error) {
-            console.error("Login failed:", error);
+            console.error("Помилка входу:", error);
 
             const msg =
                 error?.response?.data?.message ||
                 error?.message ||
-                "Something went wrong during login.";
+                "Щось пішло не так під час входу.";
 
             message.error(msg);
         }
     };
 
-
-
     const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
+        console.log('Помилка при надсиланні форми:', errorInfo);
     };
 
     return (
         <>
-            <h1 style={center}>Login Form</h1>
+            <h1 style={center}>Форма входу</h1>
             <Form
-                name="basic"
+                name="login-form"
                 style={{
                     maxWidth: 400,
                     margin: "auto"
@@ -82,12 +80,12 @@ export default function Login() {
                 layout='vertical'
             >
                 <Form.Item
-                    label="Email"
+                    label="Електронна пошта"
                     name="email"
                     rules={[
                         {
                             required: true,
-                            message: 'Please input your email!',
+                            message: 'Введіть електронну пошту!',
                         },
                     ]}
                 >
@@ -95,12 +93,12 @@ export default function Login() {
                 </Form.Item>
 
                 <Form.Item
-                    label="Password"
+                    label="Пароль"
                     name="password"
                     rules={[
                         {
                             required: true,
-                            message: 'Please input your password!',
+                            message: 'Введіть пароль!',
                         },
                     ]}
                 >
@@ -112,21 +110,17 @@ export default function Login() {
                     valuePropName="checked"
                     style={center}
                 >
-                    <Checkbox>Remember me</Checkbox>
+                    <Checkbox>Запам'ятати мене</Checkbox>
                 </Form.Item>
 
-                <Form.Item
-                    style={center}
-                >
+                <Form.Item style={center}>
                     <Button type="primary" htmlType="submit">
-                        Login
+                        Увійти
                     </Button>
                 </Form.Item>
 
-                <Form.Item
-                    style={center}
-                >
-                    <Link to="/register">Don't have an account? Register</Link>
+                <Form.Item style={center}>
+                    <Link to="/register">Не маєте облікового запису? Зареєструватися</Link>
                 </Form.Item>
             </Form>
         </>
@@ -135,4 +129,4 @@ export default function Login() {
 
 const center = {
     textAlign: "center"
-}
+};

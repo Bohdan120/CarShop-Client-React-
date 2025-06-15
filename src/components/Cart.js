@@ -14,15 +14,15 @@ const Cart = () => {
         try {
             const res = await ordersService.create();
             if (res.status === 200) {
-                message.success("Order placed successfully!");
+                message.success("Замовлення успішно оформлено!");
                 clearCart();
                 navigate("/orders"); 
             } else {
-                message.error("Failed to place order.");
+                message.error("Не вдалося оформити замовлення.");
             }
         } catch (error) {
             console.error(error);
-            message.error("An error occurred while placing the order.");
+            message.error("Сталася помилка під час оформлення замовлення.");
         } finally {
             setLoading(false);
         }
@@ -30,27 +30,27 @@ const Cart = () => {
 
     const columns = [
         {
-            title: 'Make',
+            title: 'Марка',
             dataIndex: 'make',
             key: 'make',
         },
         {
-            title: 'Model',
+            title: 'Модель',
             dataIndex: 'model',
             key: 'model',
         },
         {
-            title: 'Price',
+            title: 'Ціна',
             dataIndex: 'price',
             key: 'price',
             render: (price) => `$${price}`
         },
         {
-            title: 'Action',
+            title: 'Дія',
             key: 'action',
             render: (_, record) => (
                 <Button danger onClick={() => removeFromCart(record.id)}>
-                    Remove
+                    Видалити
                 </Button>
             ),
         },
@@ -58,10 +58,10 @@ const Cart = () => {
 
     return (
         <div className="cart-container p-4 max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold mb-4">Shopping Cart ({cartCount})</h2>
+            <h2 className="text-2xl font-bold mb-4">Кошик ({cartCount})</h2>
 
             {cartItems.length === 0 ? (
-                <p>Your cart is empty</p>
+                <p>Ваш кошик порожній</p>
             ) : (
                 <>
                     <Table
@@ -78,7 +78,7 @@ const Cart = () => {
                             disabled={loading}
                             loading={loading}
                         >
-                            Place Order
+                            Оформити замовлення
                         </Button>
                     </div>
                 </>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Checkbox, Form, Input, InputNumber, Select, Space, message, Upload } from 'antd';
+import { Button, Checkbox, Form, Input, InputNumber, Select, Space, message } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
-import { ArrowLeftOutlined, UploadOutlined } from '@ant-design/icons';
+import { ArrowLeftOutlined } from '@ant-design/icons';
 import { carsService } from '../services/cars';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -30,7 +30,6 @@ export default function CreateForm() {
             form.setFieldsValue(car);
         }
     };
- 
 
     useEffect(() => {
         loadCategories();
@@ -38,26 +37,21 @@ export default function CreateForm() {
     }, []);
 
     const onFinish = async (values) => {
-        console.log(values);
         try {
             if (editMode) {
                 values.id = car.id;
                 const res = await carsService.edit(values);
-    
                 if (res.status === 200) {
-                    message.success("Car edited successfully!");
+                    message.success("Автомобіль успішно відредаговано!");
                 }
-            }
-            else {           
+            } else {           
                 const res = await carsService.create(values);
-    
                 if (res.status === 200) {
-                    message.success("Car created successfully!");
+                    message.success("Автомобіль успішно створено!");
                 }
             }
-    
         } catch (error) {
-            console.error('Error submitting form:', error);
+            console.error('Помилка при відправленні форми:', error);
         }
 
         navigate(-1);
@@ -73,128 +67,126 @@ export default function CreateForm() {
                 <ArrowLeftOutlined />
             </Button>
 
-            <h1 style={{ textAlign: "center" }}>{editMode ? 'Edit' : 'Create'} Car</h1>
+            <h1 style={{ textAlign: "center" }}>
+                {editMode ? 'Редагування автомобіля' : 'Створення автомобіля'}
+            </h1>
+
             <Form
                 form={form}
                 name="control-hooks"
                 onFinish={onFinish}
-                style={{
-                    maxWidth: 600,
-                    margin: "auto"
-                }}
+                style={{ maxWidth: 600, margin: "auto" }}
                 layout="vertical"
             >
                 <div style={{ display: "flex", gap: 10 }}>
                     <Form.Item
                         name="make"
-                        label="Make"
-                        rules={[{ required: true, message: 'Please enter the car make' }]}
+                        label="Марка"
+                        rules={[{ required: true, message: 'Введіть марку автомобіля' }]}
                         style={{ flexGrow: 1 }}
                     >
-                        <Input placeholder="Enter car make" />
+                        <Input placeholder="Введіть марку" />
                     </Form.Item>
 
                     <Form.Item
                         name="model"
-                        label="Model"
-                        rules={[{ required: true, message: 'Please enter the car model' }]}
+                        label="Модель"
+                        rules={[{ required: true, message: 'Введіть модель автомобіля' }]}
                         style={{ flexGrow: 1 }}
                     >
-                        <Input placeholder="Enter car model" />
+                        <Input placeholder="Введіть модель" />
                     </Form.Item>
 
                     <Form.Item
                         name="year"
-                        label="Year"
-                        rules={[{ required: true, message: 'Please enter the car year' }]}
+                        label="Рік випуску"
+                        rules={[{ required: true, message: 'Введіть рік випуску' }]}
                         style={{ flexGrow: 1 }}
                     >
-                        <InputNumber min={1886} placeholder="Enter car year" style={{ width: '100%' }} />
+                        <InputNumber min={1886} placeholder="Рік випуску" style={{ width: '100%' }} />
                     </Form.Item>
                 </div>
 
                 <Form.Item
                     name="price"
-                    label="Price"
-                    rules={[{ required: true, message: 'Please enter the car price' }]}
-                    style={{ flexGrow: 1 }}
+                    label="Ціна"
+                    rules={[{ required: true, message: 'Введіть ціну' }]}
                 >
                     <InputNumber
                         style={{ width: '100%' }}
                         prefix="$"
-                        placeholder="Enter car price"
+                        placeholder="Введіть ціну"
                     />
                 </Form.Item>
 
                 <Form.Item
                     name="mileage"
-                    label="Mileage"
-                    rules={[{ required: true, message: 'Please enter the car mileage' }]}
-                    style={{ flexGrow: 1 }}
+                    label="Пробіг (км)"
+                    rules={[{ required: true, message: 'Введіть пробіг' }]}
                 >
-                    <InputNumber
-                        style={{ width: '100%' }}
-                        placeholder="Enter car mileage"
-                    />
+                    <InputNumber style={{ width: '100%' }} placeholder="Введіть пробіг" />
                 </Form.Item>
 
                 <Form.Item
                     name="engine"
-                    label="Engine"
-                    rules={[{ required: true, message: 'Please enter the car engine' }]}
+                    label="Двигун"
+                    rules={[{ required: true, message: 'Введіть тип двигуна' }]}
                 >
-                    <Input placeholder="Enter car engine" />
+                    <Input placeholder="Наприклад: бензиновий, дизельний" />
                 </Form.Item>
 
                 <Form.Item
                     name="horsepower"
-                    label="Horsepower"
-                    rules={[{ required: true, message: 'Please enter the car horsepower' }]}
+                    label="Кінські сили"
+                    rules={[{ required: true, message: 'Введіть потужність у кінських силах' }]}
                 >
-                    <InputNumber
-                        style={{ width: '100%' }}
-                        placeholder="Enter car horsepower"
-                    />
+                    <InputNumber style={{ width: '100%' }} placeholder="Введіть потужність" />
                 </Form.Item>
 
                 <Form.Item
                     name="categoryId"
-                    label="Category"
-                    rules={[{ required: true, message: 'Please select a category' }]}
+                    label="Категорія"
+                    rules={[{ required: true, message: 'Оберіть категорію' }]}
                 >
-                    <Select placeholder="Select a car category" options={categories} />
+                    <Select placeholder="Оберіть категорію" options={categories} />
                 </Form.Item>
-               
+
                 <Form.Item
                     name="imageUrl"
-                    label="ImageUrl"                   
+                    label="Посилання на зображення"
                 >
-                    <Input placeholder="Enter Image URL for car" />
+                    <Input placeholder="Введіть URL зображення автомобіля" />
                 </Form.Item>
 
                 <Form.Item
                     name="description"
-                    label="Description"
-                    rules={[{ required: true, message: 'Please enter a description' }]}
+                    label="Опис"
+                    rules={[{ required: true, message: 'Введіть опис автомобіля' }]}
                 >
-                    <TextArea rows={4} placeholder="Enter car description" minLength={10} maxLength={3000} showCount />
+                    <TextArea
+                        rows={4}
+                        placeholder="Введіть опис"
+                        minLength={10}
+                        maxLength={3000}
+                        showCount
+                    />
                 </Form.Item>
 
                 <Form.Item
                     name="inStock"
-                    label="In Stock"
+                    label="Наявність"
                     valuePropName="checked"
                 >
-                    <Checkbox>In Stock</Checkbox>
+                    <Checkbox>Є в наявності</Checkbox>
                 </Form.Item>
 
                 <Form.Item style={{ textAlign: "center" }}>
                     <Space>
                         <Button type="primary" htmlType="submit">
-                            {editMode ? 'Edit' : 'Create'}
+                            {editMode ? 'Зберегти зміни' : 'Створити'}
                         </Button>
                         <Button htmlType="button" onClick={onReset}>
-                            Reset
+                            Очистити
                         </Button>
                     </Space>
                 </Form.Item>

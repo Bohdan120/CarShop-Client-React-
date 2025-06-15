@@ -14,7 +14,7 @@ const AdminCars = () => {
   const fetchCars = async () => {
     setLoading(true);
     try {
-      const res = await carsService.get({ page: 1, pageSize: 1000 }); // отримати всі авто
+      const res = await carsService.get({ page: 1, pageSize: 1000 }); 
       const items = res.data.items.map(car => ({
         ...car,
         imageUrl: car.imageUrl.includes('://')
@@ -24,7 +24,7 @@ const AdminCars = () => {
       setCars(items);
     } catch (err) {
       console.error(err);
-      message.error('Failed to load cars');
+      message.error('Не вдалося завантажити авто');
     } finally {
       setLoading(false);
     }
@@ -33,11 +33,11 @@ const AdminCars = () => {
   const handleDelete = async (id) => {
     try {
       await carsService.delete(id);
-      message.success('Car deleted successfully');
+      message.success('Авто успішно видалено');
       fetchCars();
     } catch (err) {
       console.error(err);
-      message.error('Failed to delete car');
+      message.error('Не вдалося видалити авто');
     }
   };
 
@@ -47,45 +47,45 @@ const AdminCars = () => {
 
   const columns = [
     {
-      title: 'Image',
+      title: 'Зображення',
       dataIndex: 'imageUrl',
       key: 'image',
-      render: (url) => <img src={url} alt="car" width={100} />
+      render: (url) => <img src={url} alt="Авто" width={100} />
     },
     {
-      title: 'Make',
+      title: 'Марка',
       dataIndex: 'make',
       key: 'make'
     },
     {
-      title: 'Model',
+      title: 'Модель',
       dataIndex: 'model',
       key: 'model'
     },
     {
-      title: 'Price',
+      title: 'Ціна',
       dataIndex: 'price',
       key: 'price',
       render: (value) => `$${value}`
     },
     {
-      title: 'Year',
+      title: 'Рік',
       dataIndex: 'year',
       key: 'year'
     },
     {
-      title: 'Category',
+      title: 'Категорія',
       dataIndex: 'categoryName',
       key: 'categoryName'
     },
     {
-      title: 'In Stock',
+      title: 'В наявності',
       dataIndex: 'inStock',
       key: 'inStock',
-      render: (value) => (value ? 'Yes' : 'No')
+      render: (value) => (value ? 'Так' : 'Ні')
     },
     {
-      title: 'Actions',
+      title: 'Дії',
       key: 'actions',
       render: (_, car) => (
         <Space>
@@ -94,10 +94,10 @@ const AdminCars = () => {
             onClick={() => navigate(`/admin/cars/edit/${car.id}`)}
           />
           <Popconfirm
-            title={`Are you sure to delete ${car.make} ${car.model}?`}
+            title={`Ви впевнені, що хочете видалити ${car.make} ${car.model}?`}
             onConfirm={() => handleDelete(car.id)}
-            okText="Yes"
-            cancelText="No"
+            okText="Так"
+            cancelText="Скасувати"
           >
             <Button icon={<DeleteOutlined />} danger />
           </Popconfirm>
@@ -109,9 +109,9 @@ const AdminCars = () => {
   return (
     <div style={{ padding: 24 }}>
       <Space style={{ marginBottom: 16, justifyContent: 'space-between', width: '100%' }}>
-        <Title level={3}>Car Management</Title>
+        <Title level={3}>Управління Автомобілями</Title>
         <Button type="primary" icon={<PlusOutlined />} onClick={() => navigate('/admin/cars/create')}>
-          Add New Car
+          Додати нове авто
         </Button>
       </Space>
       <Table

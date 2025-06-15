@@ -6,26 +6,26 @@ export default function Register() {
     const navigate = useNavigate();
 
     const onFinish = async (values) => {
-        console.log('Success:', values);
+        console.log('Успішно:', values);
 
         const res = await accountsService.register(values);
 
         if (res.status !== 200) {
-            message.error("Something went wrong!");
+            message.error("Щось пішло не так!");
             return;
         }
 
-        message.success("You've registered successfully!");
+        message.success("Ви успішно зареєструвались!");
         navigate('/login');
     };
 
     const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
+        console.log('Помилка:', errorInfo);
     };
 
     return (
         <>
-            <h1 style={center}>Register Form</h1>
+            <h1 style={center}>Форма реєстрації</h1>
             <Form
                 name="register"
                 style={{
@@ -41,16 +41,16 @@ export default function Register() {
                 layout='vertical'
             >
                 <Form.Item
-                    label="Email"
+                    label="Електронна пошта"
                     name="email"
                     rules={[
                         {
                             required: true,
-                            message: 'Please input your email!',
+                            message: 'Введіть вашу електронну пошту!',
                         },
                         {
                             type: 'email',
-                            message: 'The input is not valid E-mail!',
+                            message: 'Неправильний формат електронної пошти!',
                         }
                     ]}
                 >
@@ -58,12 +58,12 @@ export default function Register() {
                 </Form.Item>
 
                 <Form.Item
-                    label="Password"
+                    label="Пароль"
                     name="password"
                     rules={[
                         {
                             required: true,
-                            message: 'Please input your password!',
+                            message: 'Введіть пароль!',
                         },
                     ]}
                 >
@@ -71,21 +71,21 @@ export default function Register() {
                 </Form.Item>
 
                 <Form.Item
-                    label="Confirm Password"
+                    label="Підтвердження пароля"
                     name="confirm"
                     dependencies={['password']}
                     hasFeedback
                     rules={[
                         {
                             required: true,
-                            message: 'Please confirm your password!',
+                            message: 'Підтвердіть пароль!',
                         },
                         ({ getFieldValue }) => ({
                             validator(_, value) {
                                 if (!value || getFieldValue('password') === value) {
                                     return Promise.resolve();
                                 }
-                                return Promise.reject(new Error('The two passwords do not match!'));
+                                return Promise.reject(new Error('Паролі не співпадають!'));
                             },
                         }),
                     ]}
@@ -93,11 +93,9 @@ export default function Register() {
                     <Input.Password />
                 </Form.Item>
 
-                <Form.Item
-                    style={center}
-                >
+                <Form.Item style={center}>
                     <Button type="primary" htmlType="submit">
-                        Register
+                        Зареєструватися
                     </Button>
                 </Form.Item>
             </Form>
