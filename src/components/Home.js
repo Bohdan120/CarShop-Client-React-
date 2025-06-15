@@ -102,12 +102,13 @@ const Home = () => {
               />
             </Col>
             <Col span={12} md={8}>
-              <ServiceItem
-                icon={<TrademarkCircleOutlined />}
-                title="Trade-In"
-                text="Чесна оцінка вашого авто при обміні."
-              />
-            </Col>
+            <ServiceItem
+              icon={<TrademarkCircleOutlined />}
+              title="Тест-драйв"
+              text="Можливість протестувати авто перед покупкою."
+            />
+          </Col>
+
             <Col span={12} md={8}>
               <ServiceItem
                 icon={<SafetyCertificateOutlined />}
@@ -151,19 +152,22 @@ const Home = () => {
         </Col>
       </Row>
       <Divider />
-      <Row className="section customer-reviews">
+      <Row className="section customer-reviews" gutter={[16, 16]}>
         <Col span={24}>
           <Title level={1} className="section-title">Відгуки клієнтів</Title>
         </Col>
-        <Col span={8}>
+
+        <Col xs={24} sm={24} md={12} lg={8}>
           <Card>
             <Meta
               avatar={<Avatar src="https://cdn-icons-png.flaticon.com/512/5556/5556499.png" />}
               title="Джек Сміт"
               description={
                 <>
-                  Відмінне обслуговування! Знайшов ідеальний автомобіль у CarShop. Обов’язково порекомендую друзям.
-                  <div>
+                  <div style={{ marginBottom: 8 }}>
+                    Відмінне обслуговування! Знайшов ідеальний автомобіль у CarShop. Обов’язково порекомендую друзям.
+                  </div>
+                  <div className="review-rating">
                     <Rate disabled defaultValue={5} />
                   </div>
                 </>
@@ -171,15 +175,18 @@ const Home = () => {
             />
           </Card>
         </Col>
-        <Col span={8}>
+
+        <Col xs={24} sm={24} md={12} lg={8}>
           <Card>
             <Meta
               avatar={<Avatar src="https://static.vecteezy.com/system/resources/previews/011/459/669/original/people-avatar-icon-png.png" />}
               title="Джейн Вільямс"
               description={
                 <>
-                  Чудовий досвід з CarShop! Великий вибір та ввічливий персонал.
-                  <div>
+                  <div style={{ marginBottom: 8 }}>
+                    Чудовий досвід з CarShop! Великий вибір та ввічливий персонал.
+                  </div>
+                  <div className="review-rating">
                     <Rate disabled defaultValue={5} />
                   </div>
                 </>
@@ -187,16 +194,19 @@ const Home = () => {
             />
           </Card>
         </Col>
-        <Col span={8}>
+
+        <Col xs={24} sm={24} md={12} lg={8}>
           <Card>
             <Meta
-              avatar={<Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIn-gE6j6sjvg0ekFgFBIzVP5VdN3aBu9dLg&s" />}
-              title="Алекс Джонсон"
+              avatar={<Avatar src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" />}
+              title="Олександр Іваненко"
               description={
                 <>
-                  Не міг би бути щасливішим з покупкою у CarShop. Дякую за чудове обслуговування!
-                  <div>
-                    <Rate disabled defaultValue={5} />
+                  <div style={{ marginBottom: 8 }}>
+                    Задоволений покупкою, авто як нове, сервіс на найвищому рівні.
+                  </div>
+                  <div className="review-rating">
+                    <Rate disabled defaultValue={4} />
                   </div>
                 </>
               }
@@ -204,6 +214,8 @@ const Home = () => {
           </Card>
         </Col>
       </Row>
+
+   
       <Divider />
       <Row className="section video-section">
         <Col span={24}>
@@ -221,8 +233,17 @@ const Home = () => {
             </Col>
             <Col span={12}>
               <div className="video-container">
-                <iframe width="860" height="415" src="https://www.youtube.com/embed/CPmRNLYBObE?si=WkzLTGUC-AvQqUlK" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                <iframe
+                  src="https://www.youtube.com/embed/CPmRNLYBObE?si=WkzLTGUC-AvQqUlK"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  loading="lazy"
+                ></iframe>
               </div>
+
             </Col>
           </Row>
         </Col>
